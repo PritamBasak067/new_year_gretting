@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEW YEAR GRETTING</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="web_icon.png">
+</head>
+<body>
+  <div class="box">
+    <h2>welcome</h2>
+    <marquee behavior="" direction="">wish new year to your friends and relatives</marquee>
+    <div class="inp-box">
+      <input id="nameInput" type="text" placeholder="enter name" required>
+    </div>
+    <div class="btn-box">
+      <button onclick="clearName()">clear</button>
+      <button onclick="submitName()">submit</button>
+    </div>
+  </div>
+
+  <script>
+    function clearName() {
+    document.getElementById("nameInput").value = "";
+};
+
+function submitName() {
+    let name = document.getElementById("nameInput").value.trim();
+
+    if (name) {
+        localStorage.setItem("userName", name);
+        window.location.href = "gretting.html";
+    } else {
+        alert("Please enter a name");
+    }
+};
+  </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    position:relative;
+    background-color: black;
+}
+
+.container .msg {
+    width: 100%;
+    text-align: center;
+    font-size: 120px;
+    font-family: "Brush Script MT", cursive;
+    text-transform: capitalize;
+    color: #ff00cc;
+    position: relative;
+    animation: msg 2s ease-in-out 6s forwards;
+    opacity: 0;
+}
+
+@keyframes msg {
+    0% {
+        transform: translateY(20%);
+        opacity: 0;
+    } 100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.year {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+}
+
+.year span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    letter-spacing: -12px;
+}
+
+.year .first-year {
+    margin-left: -60px;
+}
+
+.first-year .y1 {
+    color: white;
+    animation: y1 2s ease-in-out 6s forwards;
+}
+
+@keyframes y1 {
+    0% {
+        color: white;
+    } 100% {
+        color: yellow;
+    }
+}
+
+.first-year .y2 {
+    color: white;
+    animation: y2 2s ease-in-out 6s forwards;
+}
+
+@keyframes y2 {
+    0% {
+        color: white;
+    } 100% {
+        color: aquamarine;
+    }
+}
+
+.first-year .y3 {
+    color: white;
+    animation: y3 2s ease-in-out 6s forwards;
+}
+
+@keyframes y3 {
+    0% {
+        color: white;
+    } 100% {
+        color: palevioletred;
+    }
+}
+
+.year .old {
+    position: absolute;
+    transform: translateX(40%) translateY(0);
+    animation: old 1.7s ease 5.5s forwards;
+    opacity: 1;
+}
+
+@keyframes old {
+    0% {
+        transform: translateX(40%) translateY(0%);
+        opacity: 1;
+    } 100% {
+        transform: translateX(40%) translateY(-515%);
+        opacity: 0;
+    }
+}
+
+.year .new {
+    position: absolute;
+    transform: translateX(2000%) translateY(0);
+    animation: new 5s ease 2s forwards;
+    opacity: 0;
+}
+
+@keyframes new {
+    0% {
+        transform: translateX(2000%);
+        color: white;
+        opacity: 0;
+    } 40% {
+        transform: translateX(200%);
+        opacity: 1;
+    } 80% {
+        transform: translateX(200%);
+        opacity: 1;
+    } 100% {
+        transform: translateX(50%);
+        color: goldenrod;
+        opacity: 1;
+    }
+}
+
+.container #name {
+    width: 100%;
+    text-align: center;
+    font-size: 83px;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    opacity: 0;
+    animation: name 2s ease-in-out 6s forwards;
+}
+
+@keyframes name {
+    0% {
+        transform: translateY(20%);
+        opacity: 0;
+        color: white;
+    } 100% {
+        transform: translateY(0%);
+        opacity: 1;
+        color: gold;
+    }
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: aqua;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-top: 5%;
+    position: relative;
+    transform: translateY(0%);
+    opacity: 0;
+    animation: btn 2s ease-in-out 6s forwards;
+}
+
+@keyframes btn {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    } 100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.container .firework {
+    position: absolute;
+    opacity: 0;
+    animation: show-fire 2s ease-in-out 6s forwards;
+}
+
+@keyframes show-fire {
+    0% {
+        opacity: 0;
+    } 99% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+.firework .craker {
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    transform-origin: 50% 100%;
+    overflow: hidden;
+}
+
+.firework .craker::before {
+    content: "";
+    background-color: gold;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    animation: fire 2s ease-in-out infinite;
+}
+
+@keyframes fire {
+    0% {
+        top: 100%;
+    } 25% {
+        top: 50%;
+    } 50% {
+        top: -25%;
+    } 75% {
+        top: -50%;
+    } 100% {
+        top: -50%;
+    }
+}
+
+.craker:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+
+.craker:nth-child(2) {
+    transform: rotate(30deg) translateY(-15px);
+}
+
+.craker:nth-child(3) {
+    transform: rotate(60deg) translateY(-15px);
+}
+
+.craker:nth-child(4) {
+    transform: rotate(90deg) translateY(-15px);
+}
+
+.craker:nth-child(5) {
+    transform: rotate(120deg) translateY(-15px);
+}
+
+.craker:nth-child(6) {
+    transform: rotate(150deg) translateY(-15px);
+}
+
+.craker:nth-child(7) {
+    transform: rotate(180deg) translateY(-15px);
+}
+
+.craker:nth-child(8) {
+    transform: rotate(210deg) translateY(-15px);
+}
+
+.craker:nth-child(9) {
+    transform: rotate(240deg) translateY(-15px);
+}
+
+.craker:nth-child(10) {
+    transform: rotate(270deg) translateY(-15px);
+}
+
+.craker:nth-child(11) {
+    transform: rotate(300deg) translateY(-15px);
+}
+
+.craker:nth-child(12) {
+    transform: rotate(330deg) translateY(-15px);
+}
+
+.container #firework1 {
+    top: 10%;
+    left: 30%;
+    scale: 0.5;
+}
+
+.container #firework2 {
+    top: 70%;
+    left: 40%;
+    scale: 1;
+}
+
+.container #firework3 {
+    top: 30%;
+    left: 80%;
+    scale: 1.5;
+}
+
+@media (max-width: 424px) {
+    .container .msg {
+        font-size: 40px;
+    }
+
+    .year {
+        font-size: 33.3px;
+    }
+
+    .year span {
+        letter-spacing: normal;
+    }
+
+    .year .first-year {
+        margin-left: -10px;
+    }
+
+    .container #name {
+        font-size: 27.7px;
+    }
+
+    .container button {
+        width: 70px;
+        height: 30px;
+        border-radius: 30px;
+        font-size: 15px;
+        top: 10%;
+    }
+
+    .container #firework1 {
+        scale: 0.4;
+    }
+
+    .container #firework2 {
+        scale: 0.6;
+    }
+
+    .container #firework3 {
+        scale: 0.5;
+    }
+}

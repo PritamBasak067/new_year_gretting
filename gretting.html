@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gretting</title>
+  <link rel="stylesheet" href="gretting.css">
+  <link rel="icon" type="image/png" href="web_icon.png">
+</head>
+<body>
+  <div class="container">
+    <div class="msg">happy new year</div>
+    <div class="year">
+      <span class="first-year">
+        <span class="y1">2</span>
+        <span class="y2">0</span>
+        <span class="y3">2</span>
+      </span>
+      <span class="old">5</span>
+      <span class="new">6</span>
+    </div>
+    <div id="name">viewers</div>
+    <button onclick="sharepage()">Share</button>
+    
+    <div class="firework" id="firework1">
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+    </div><!-- firework1 -->
+
+    <div class="firework" id="firework2">
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+    </div><!-- firework1 -->
+
+    <div class="firework" id="firework3">
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+      <div class="craker"></div>
+    </div><!-- firework1 -->
+  </div><!-- container -->
+
+  <script>
+    let name = localStorage.getItem("userName");
+    if (name) {
+      document.getElementById("name").innerHTML = `${name}`;
+    } else {
+      document.getElementById("name").innerHTML = "Viewers";
+    }
+
+    function sharepage() {
+      let url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Link Copied");
+      });
+    }
+  </script>
+</body>
+</html>
